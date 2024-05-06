@@ -128,13 +128,33 @@ def run_dashboard(solar_data):
         """The anomaly score chart shows the anomaly scores over time."""
         """It shows how the anomaly scores change over time."""
         # Anomaly Score Chart
-        anomaly_score_fig = px.line(
-            filtered_data,
-            x='Date',  # X-axis data
-            y='anomaly_score',  # Y-axis data
-            title="Anomaly Scores Over Time ( Lower, more abnormal )"  # Chart title
-        )
 
+        anomaly_score_fig = go.Figure()  # Create a new figure for the anomaly score chart
+        # Add traces for the anomaly score data
+        # The trace defines how the data will be visualized, including style and condition-based formatting
+        anomaly_score_fig.add_trace(go.Scatter(
+        x=filtered_data['Date'],  # Set the x-axis as the Date column of the filtered data
+        y=filtered_data['anomaly_score'],  # Set the y-axis as the anomaly_score column of the filtered data
+        mode='lines+markers',  # Display both lines and markers on the graph
+        name='Anomaly Score',  # Name the trace, which will appear in the legend
+        marker=dict(
+            color=[ 'red' if val < 0 else 'blue' for val in filtered_data['anomaly_score'] ],  # Use list comprehension to assign colors conditionally
+            # Markers will be red if the anomaly score is below 0, otherwise blue
+            size=5,  # Set the size of the markers
+            line=dict(
+                color='DarkSlateGrey',  # Color of the line around each marker
+                width=2  # Width of the line around each marker
+            )
+        )
+        ))
+    
+        # Update the layout of the figure to add titles and improve readability
+        anomaly_score_fig.update_layout(
+        title="Anomaly Scores Over Time (Lower the scores, higher chances of anomaly, negative score means definitely anomaly)",  # Main title of the chart
+        xaxis_title='Date',  # Title for the x-axis
+        yaxis_title='Anomaly Score'  # Title for the y-axis
+        )
+    
         return time_series_fig, correlation_fig, anomaly_score_fig  # Return updated figures
 
 
