@@ -88,12 +88,12 @@ References:
 - [SHAP Documentation](https://shap.readthedocs.io/en/latest/)
 
 3. **Output**:  
-- We will have Solar_Orbiter_with_Anomalies.csv within the Data folder saved ( This contains the original database with anomaly scores explained in code)
-- We will have shap_values_plot.html saved in Python_Scripts/Explainability, containing the visualisation of Feature importance
+- We will have `Solar_Orbiter_with_Anomalies.csv` within the Data folder saved ( This contains the original database with anomaly scores explained in code)
+- We will have shap_values_plot.html saved in `Python_Scripts/Explainability` , containing the visualisation of Feature importance
 
 ### Dashboarding the Data
 
-1. **Local run** - The dashboard, can be run on a local server on your own system by running the **dashboard.py file** within the Python_Scripts folder
+1. **Local run** - The dashboard, can be run on a local server on your own system by running the `dashboard.py file` within the `Python_Scripts` folder
 - The Dashboard consists of 4 key visualisations, 
 - Time Series Chart: This shows how each of the features varies over time and gives us insights about how the data looks overall
 - Correlation Heatmap: This calculates correlation coefficient between several features and displays it in the form of a heatmap. Interestingly,
