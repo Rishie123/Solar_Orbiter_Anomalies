@@ -132,3 +132,9 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - It shows the time required to run the model and get the shaply values with visualisation is 3.56 seconds with breakdown
 
 - Reference: https://docs.python.org/3/library/profile.html
+
+
+Access the Dashboard at
+
+Deployed project link: [Dashboard](https://my-render-jh3k.onrender.com/)
+ 
