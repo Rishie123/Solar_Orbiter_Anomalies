@@ -1,6 +1,7 @@
 ## ESA's Solar Orbiter
 
-![The Solar Orbiter](Images/Solar_Orbiter_instruments.png "Solar Orbiter")
+Deployed project link:[Dashboard](https://my-render-jh3k.onrender.com/)
+ 
 
 This is a project to analyze data from ESA's Solar Orbiter for a period of 2 years, from *1st of January 2022* to *1st of January 2024*.
 
@@ -15,7 +16,7 @@ There are two primary tasks which I want to perform:
 ### Setup Instructions
 
 To get started, ensure you have Python3 installed on your system. You can download the latest stable version from here: 
-[Python Downloads](https://www.python.org/downloads/)
+[Python Download](https://www.python.org/downloads/)
 
 **To quickly run everything and see main results, run:**
 - `python3 Python_Scripts/run_ml_models.py`
@@ -95,15 +96,15 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 5 May to 11 May are identified as anomalous dates by the model. This is consistent with the fact that the spacecraft was having high noise period around that time ( https://www.cosmos.esa.int/web/soar/support-data )
 - Feature Importance Plot: This is simply embedded from the explainability folder using the Dash HTML component Iframe
 
-2. **Deploying using Render** - I have deployed the dashboard on the web using render, largely by following this tutorial
-
+2. **Deploying using Render** - I have deployed the dashboard on the web using render, largely by following a tutorial
 - Please follow this tutorial for doing the same https://www.youtube.com/watch?v=XWJBJoV5yww&t=0s
 - For the same, you will find the entire Dashboard named as app and all the needed things within src folder in the DeployWithRender folder 
-- Be in the DeployWithRender directory
-- Ensure you have dash-tools installed, it is their in requirements.txt ( so I am assuming it is installed )
+- Copy the DeployWithRender directory and open it in a separate project to avoid nested git repositories
+- Ensure you have dash-tools installed, it is their in requirements.txt ( so I am assuming it is installed or do pip install dash-tools)
 - type "dashtools gui" in terminal
 - Go to Deploy section on the newly opened page 
 - Open your file there, by putting the path of your folder in the text box
+- Follow the instruction further in the tutorial and you will be able to deploy it, just like this: https://my-render-jh3k.onrender.com/
 
 ## Scalability
 
