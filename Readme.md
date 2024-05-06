@@ -36,7 +36,7 @@ To get started, ensure you have Python3 installed on your system. You can downlo
    - *Change `my_project` with whatever name you want to give it.*
 
 2. **Install all the dependencies of the project** by typing this in your console:
-**pip install -r Setup_Files/Requirements.txt**
+**pip install -r Setup_File/Requirements.txt**
 
 
 
