@@ -39,9 +39,15 @@ To get started, ensure you have Python3 installed on your system. You can downlo
 **pip install -r Setup_Files/Requirements.txt**
 
 
+
+
+
 **To quickly run everything and see main results, run:**
 - `python3 Python_Scripts/run_ml_models.py`
 - `python3 Python_Scripts/dashboard.py`
+
+
+
 
 
 ### Understanding the Data
@@ -60,7 +66,7 @@ Open the Data Folder. It has `Solar_Orbiter.csv`. This file contains, per day, m
 **TO KEEP THIS BRIEF(ER), I HAVE PROVIDED MORE DETAILED EXPLANATIONS IN CODE COMMENTS**
 
 1. **Open the Python_Scripts folder.**
-- Here, you will find a file called `run_ml_models.py`.
+- Here, you will find a file called `Run_Ml_Models.py`.
 - Running this in the terminal will detect all the anomalies within the dataset using the Isolation Forest model.
 
 2. **The Isolation Forest algorithm** is an unsupervised learning algorithm for anomaly detection that works by:
@@ -77,7 +83,7 @@ References:
 
 1. **SHAP values** are used to explain the decisions of the Isolation Forest model.
 - SHAP (SHapley Additive exPlanations) values derive from game theory and provide insights into the contribution of each feature to a specific prediction made by the model.
-- These will be calculated upon running the `run_ml_models.py` file.
+- These will be calculated upon running the `Run_Ml_Models.py` file.
 
 2. **Visualization**: 
 - A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the Explainability folder, based on section 9.6.5 of textbook of Interpretable ML Book
@@ -88,12 +94,12 @@ References:
 - [SHAP Documentation](https://shap.readthedocs.io/en/latest/)
 
 3. **Output**:  
-- We will have `Solar_Orbiter_with_Anomalies.csv` within the Data folder saved ( This contains the original database with anomaly scores explained in code)
+- We will have `Solar_Orbiter_With_Anomalies.csv` within the Data folder saved ( This contains the original database with anomaly scores explained in code)
 - We will have shap_values_plot.html saved in `Python_Scripts/Explainability` , containing the visualisation of Feature importance
 
 ### Dashboarding the Data
 
-1. **Local run** - The dashboard, can be run on a local server on your own system by running the `dashboard.py file` within the `Python_Scripts` folder
+1. **Local run** - The dashboard, can be run on a local server on your own system by running the `Dashboard.py file` within the `Python_Scripts` folder
 - The Dashboard consists of 4 key visualisations, 
 - Time Series Chart: This shows how each of the features varies over time and gives us insights about how the data looks overall
 - Correlation Heatmap: This calculates correlation coefficient between several features and displays it in the form of a heatmap. Interestingly,
@@ -104,10 +110,10 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 
 2. **Deploying using Render** - I have deployed the dashboard on the web using render, largely by following a tutorial
 - Please follow this tutorial for doing the same https://www.youtube.com/watch?v=XWJBJoV5yww&t=0s
-- For the same, you will find the entire Dashboard named as app and all the needed things within src folder in the DeployWithRender folder 
+- For the same, you will find the entire Dashboard named as app and all the needed things within src folder in the `Deploy_With_Render` folder 
 - Copy the DeployWithRender directory and open it in a separate project to avoid nested git repositories
 - Ensure you have dash-tools installed, it is their in requirements.txt ( so I am assuming it is installed or do pip install dash-tools)
-- type "dashtools gui" in terminal
+- type `dashtools gui` in terminal
 - Go to Deploy section on the newly opened page 
 - Open your file there, by putting the path of your folder in the text box
 - Follow the instruction further in the tutorial and you will be able to deploy it, just like this: https://my-render-jh3k.onrender.com/
@@ -117,20 +123,20 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 1. Memory Profiling:  
 
 - We use the memoryprofiler library to do memory profiling
-- The results are stored in Scalability/memory_profiling
+- The results are stored in `Scalability/Memory_Profiling`
 - From the results, it can be seen that within the dashboard, every line involves about 120 Mib of memory while callback requires 120 Mib recurrently
 - Also, within the run_ml_models.py calculating shap values and fitting the model are the most memory intensive tasks
-- Interestingly, as seen in Scalability/Plot_ML_Model, there is a growth and decline in memory usage for run_ml_models but, no decline for dashboard.
+- Interestingly, as seen in `Scalability/Plot_ML_Model`, there is a growth and decline in memory usage for Run_Ml_Models but, no decline for Dashboard.
 
-- Reference: https://pypi.org/project/memory-profiler/  #
+- Reference: https://pypi.org/project/memory-profiler/  
 - Reference: https://github.com/pythonprofilers/memory_profiler
 
 
 2. Time Profiling:
 
 - We use the cProfile package for doing time profiling
-- The results are stored in Scalability/time_profiling
-- To reproduce, simply follow the instructions at the bottom of the code for dashboard.py and run_ml_models.py
+- The results are stored in `Scalability/Time_Profiling`
+- To reproduce, simply follow the instructions at the bottom of the code for `Dashboard.py` and `Run_Ml_Models.py`
 - you can interpret the results using snakeviz as mentioned there
 - It shows the time required to load the dashboard completely is 23.22seconds, along with breakdown of time required by different components
 - It shows the time required to run the model and get the shaply values with visualisation is 3.56 seconds with breakdown
@@ -138,7 +144,7 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - Reference: https://docs.python.org/3/library/profile.html
 
 
-Access the Dashboard at
+Access the Dashboard at link: 
 
-Deployed project link: [Dashboard](https://my-render-jh3k.onrender.com/)
+[Dashboard](https://my-render-jh3k.onrender.com/)
  

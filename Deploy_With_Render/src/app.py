@@ -6,7 +6,7 @@ import plotly.express as px  # Plotly Express for creating interactive visualiza
 import plotly.graph_objects as go  # Plotly Graph Objects for more control over visualizations
 
  # Load the dataset
-data_path = "Solar_Orbiter_with_anomalies.csv"  # Path to dataset file
+data_path = "Solar_Orbiter_With_Anomalies.csv"  # Path to dataset file
 solar_data = pd.read_csv(data_path)  # Read dataset into DataFrame
    
 
