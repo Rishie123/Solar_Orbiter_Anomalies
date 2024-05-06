@@ -1,6 +1,6 @@
 ## ESA's Solar Orbiter
 
-Deployed project link:[Dashboard](https://my-render-jh3k.onrender.com/)
+Deployed project link: [Dashboard](https://my-render-jh3k.onrender.com/)
  
 
 This is a project to analyze data from ESA's Solar Orbiter for a period of 2 years, from *1st of January 2022* to *1st of January 2024*.
