@@ -3,7 +3,6 @@
 ![alt text]( https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/main/Images/Solar_Orbiter_Instruments.png )
 
 
-
 Deployed dashboard link: [Dashboard](https://my-render-jh3k.onrender.com/)
  
 
