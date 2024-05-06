@@ -16,8 +16,8 @@ def main():
     
     # Define file paths for data input and output
     data_path = "../Data/Solar_Orbiter.csv"  # Input file path.
-    output_path = "../Data/Solar_Orbiter_with_anomalies.csv"  # Output file path.
-    shap_plot_path = "Explainability/shap_values_plot.html"  # Path to save SHAP values plot, now as HTML for interactivity
+    output_path = "../Data/Solar_Orbiter_With_Anomalies.csv"  # Output file path.
+    shap_plot_path = "Explainability/Shap_Values_Plot.html"  # Path to save SHAP values plot, now as HTML for interactivity
 
     # Loading the dataset
     solar_data = h.load_data(data_path)  # Load data from the CSV file using a helper function.
@@ -99,13 +99,14 @@ def main():
 if __name__ == "__main__":
     main()
     """Uncomment this line to do time profiling of the code"
-    #cProfile.run('main()', 'Scalability/time_profiling/run_ml_models.prof') 
+
+    #cProfile.run('main()', 'Scalability/Time_Profiling/Run_Ml_Models.prof') 
 
     This has already been performed and stored in the Scalability folder"
      to access the time profiling results,
     run the following command in the terminal:
     
-    $ snakeviz Scalability/time_profiling/run_ml_models.prof
+    $ snakeviz Scalability/Time_Profiling/Run_Ml_Models.prof
 
     (Ensure you have snakeviz installed by running `pip install snakeviz`)
 

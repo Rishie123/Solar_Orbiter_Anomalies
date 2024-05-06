@@ -11,7 +11,7 @@ from memory_profiler import profile  # For memory profiling
 #@profile  # Decorator to enable memory profiling
 """ Uncomment above line with @profile to do memory profiling of the code
  @profile can be used to get the memory usage per line of the code, this has already been performed and stored in the Scalability folder"
-you can further run "mprof run --python dashboard.py" and "mprof plot" on terminal to get the memory usage with time after run"""
+you can further run "mprof run --python Dashboard.py" and "mprof plot" on terminal to get the memory usage with time after run"""
 " These results have been stored in the Scalability folder"
 '''Reference: https://pypi.org/project/memory-profiler/  '''
 
@@ -68,7 +68,7 @@ def run_dashboard(solar_data):
         html.Div(id='anomaly-stats', style={'margin-top': '20px', 'text-align': 'center'})  # SHAP Values
         ,
         html.Iframe(
-            srcDoc=open("Explainability/shap_values_plot.html").read(),
+            srcDoc=open("Explainability/Shap_Values_Plot.html").read(),
             style={"height": "500px", "width": "100%"}
         )
     ])
@@ -176,13 +176,13 @@ def run_dashboard(solar_data):
 
 if __name__ == "__main__":
     # Load the dataset
-    data_path = "../Data/Solar_Orbiter_with_anomalies.csv"  # Path to dataset file
+    data_path = "../Data/Solar_Orbiter_With_Anomalies.csv"  # Path to dataset file
     solar_data = pd.read_csv(data_path)  # Read dataset into DataFrame
     """Uncomment the next line to perform time profiling of the code, you can access the time profiling results by running the 
     following command in the terminal: 
-    snakeviz Scalability/time_profiling/run_dashboard.prof
+    snakeviz Scalability/Time_profiling/Run_Dashboard.prof
     Ensure you have snakeviz installed by running `pip install snakeviz`"""
-    # cProfile.run('run_dashboard(solar_data)', 'Scalability/time_profiling/run_dashboard.prof')
+    # cProfile.run('run_dashboard(solar_data)', 'Scalability/Time_Profiling/Run_Dashboard.prof')
 
     run_dashboard(solar_data)
       
