@@ -17,7 +17,7 @@ def main():
     # Define file paths for data input and output
     data_path = "../Data/Solar_Orbiter.csv"  # Input file path.
     output_path = "../Data/Solar_Orbiter_with_anomalies.csv"  # Output file path.
-    shap_plot_path = "../Explainability/shap_values_plot.html"  # Path to save SHAP values plot, now as HTML for interactivity
+    shap_plot_path = "Explainability/shap_values_plot.html"  # Path to save SHAP values plot, now as HTML for interactivity
 
     # Loading the dataset
     solar_data = h.load_data(data_path)  # Load data from the CSV file using a helper function.
