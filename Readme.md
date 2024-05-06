@@ -61,6 +61,8 @@ Open the Data Folder. It has `Solar_Orbiter.csv`. This file contains, per day, m
 - Solar Array Angle (Deg)
 - High Gain Antenna azimuth (Deg)
 
+[Details of these instruments](https://sci.esa.int/web/solar-orbiter/-/51217-instruments)
+
 ### Detecting Anomalies
 
 **TO KEEP THIS BRIEF(ER), I HAVE PROVIDED MORE DETAILED EXPLANATIONS IN CODE COMMENTS**
