@@ -35,7 +35,7 @@ To get started, ensure you have Python3 installed on your system. You can downlo
    - *Change `my_project` with whatever name you want to give it.*
 
 2. **Install all the dependencies of the project** by typing this in your console:
-pip install -r Setup_Files/Requirements.txt
+**pip install -r Setup_Files/Requirements.txt**
 
 
 ### Understanding the Data
@@ -104,7 +104,6 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - type "dashtools gui" in terminal
 - Go to Deploy section on the newly opened page 
 - Open your file there, by putting the path of your folder in the text box
-- 
 
 ## Scalability
 
@@ -124,14 +123,9 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 
 - We use the cProfile package for doing time profiling
 - The results are stored in Scalability/time_profiling
-- To reproduce, simply follow the insructions at the bottom of the code for dashboard.py and run_ml_models.py
+- To reproduce, simply follow the instructions at the bottom of the code for dashboard.py and run_ml_models.py
 - you can interpret the results using snakeviz as mentioned there
-- It shows the time required to load the dashboard completely is 23.22seconds, alongwith breakdown of time required by different components
+- It shows the time required to load the dashboard completely is 23.22seconds, along with breakdown of time required by different components
 - It shows the time required to run the model and get the shaply values with visualisation is 3.56 seconds with breakdown
 
 - Reference: https://docs.python.org/3/library/profile.html
-
-
-## Testing
-
-- Unit tests have been performed within the Python_Scripts folder in a file named, tests.py
