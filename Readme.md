@@ -5,7 +5,7 @@ Deployed project link: [Dashboard](https://my-render-jh3k.onrender.com/)
 
 This is a project to analyze data from ESA's Solar Orbiter for a period of 2 years, from *1st of January 2022* to *1st of January 2024*.
 
-All the data needed has already been provided for the convenience of the user in the Data folder as `Solar_Orbiter.csv`.
+All the data needed has already been provided in the Data folder as `Solar_Orbiter.csv`.
 
 ### Primary Tasks
 
