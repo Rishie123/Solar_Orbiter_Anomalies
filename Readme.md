@@ -18,9 +18,6 @@ There are two primary tasks which I want to perform:
 To get started, ensure you have Python3 installed on your system. You can download the latest stable version from here: 
 [Python Download](https://www.python.org/downloads/)
 
-**To quickly run everything and see main results, run:**
-- `python3 Python_Scripts/run_ml_models.py`
-- `python3 Python_Scripts/dashboard.py`
 
 ### Environment Setup
 
@@ -29,7 +26,7 @@ To get started, ensure you have Python3 installed on your system. You can downlo
      ```
      python3 -m venv my_project
      ```
-   - Activate it whenever you want access to the project by typing:
+   - Activate it 
      ```
      source my_project/bin/activate
      ```
@@ -37,6 +34,11 @@ To get started, ensure you have Python3 installed on your system. You can downlo
 
 2. **Install all the dependencies of the project** by typing this in your console:
 **pip install -r Setup_Files/Requirements.txt**
+
+
+**To quickly run everything and see main results, run:**
+- `python3 Python_Scripts/run_ml_models.py`
+- `python3 Python_Scripts/dashboard.py`
 
 
 ### Understanding the Data
