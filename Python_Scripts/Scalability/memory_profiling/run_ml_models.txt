@@ -1,0 +1,78 @@
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+     7    241.5 MiB    241.5 MiB           1   @profile
+     8                                         def main():
+     9                                             """Main function to calculate SHAP values and detect outliers using an Isolation Forest model."""
+    10                                             
+    11                                             # Define file paths for data input and output
+    12    241.5 MiB      0.0 MiB           1       data_path = "../Data/Solar_Orbiter.csv"  # Input file path.
+    13    241.5 MiB      0.0 MiB           1       output_path = "../Data/Solar_Orbiter_with_anomalies.csv"  # Output file path.
+    14    241.5 MiB      0.0 MiB           1       shap_plot_path = "../Explainability/shap_values_plot.html"  # Path to save SHAP values plot, now as HTML for interactivity
+    15                                         
+    16                                             # Loading the dataset
+    17    242.7 MiB      1.2 MiB           1       solar_data = h.load_data(data_path)  # Load data from the CSV file using a helper function.
+    18                                         
+    19                                             # Convert 'Date' column to datetime format and drop it for easir analysis 
+    20                                             #I am doing this because, it is difficult for Isolation Forest and SHAP to handle datetime data)
+    21    243.3 MiB      0.6 MiB           1       solar_data['Date'] = pd.to_datetime(solar_data['Date'])
+    22    243.7 MiB      0.4 MiB           1       data_for_analysis = solar_data.drop(columns=['Date'])
+    23                                         
+    24    243.7 MiB      0.0 MiB           1       "The Isolation Forest algorithm is used to detect anomalies in the dataset."
+    25    243.7 MiB      0.0 MiB           1       "The algorithm is trained on the data and assigns an anomaly score to each instance."
+    26    243.7 MiB      0.0 MiB           1       "The anomaly score indicates how different an instance is from the majority of the data."
+    27    243.7 MiB      0.0 MiB           1       "A lower anomaly score indicates a higher likelihood of being an anomaly."
+    28                                         
+    29    243.7 MiB      0.0 MiB           1       "The Isolation Forest algorithm is an unsupervised learning algorithm for anomaly detection."
+    30    243.7 MiB      0.0 MiB           1       "It is based on the principle that anomalies are easier to isolate than normal data points."
+    31    243.7 MiB      0.0 MiB           1       "The algorithm works by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature."
+    32    243.7 MiB      0.0 MiB           1       "The process is repeated recursively to create a tree-like structure."
+    33    243.7 MiB      0.0 MiB           1       "Anomalies are isolated in the tree with a shorter path length, i.e., fewer splits."
+    34                                         
+    35    243.7 MiB      0.0 MiB           1       " Reference 1: https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf - Original Paper"
+    36    243.7 MiB      0.0 MiB           1       " Reference 2: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html - Scikit-learn Documentation"
+    37    243.7 MiB      0.0 MiB           1       " Reference 3: https://towardsdatascience.com/outlier-detection-with-isolation-forest-3d190448d45e - Towards Data Science"
+    38                                         
+    39                                         
+    40                                             # Fit Isolation Forest model to detect outliers
+    41    246.1 MiB      2.4 MiB           1       iso_forest_model = h.fit_isolation_forest(data_for_analysis)  # Train the Isolation Forest model on the data.
+    42                                             # Compute anomaly scores for each instance using the Isolation Forest model
+    43    246.1 MiB      0.0 MiB           1       solar_data['iso_forest_anomaly_score'] = iso_forest_model.decision_function(data_for_analysis)
+    44                                         
+    45    246.1 MiB      0.0 MiB           1       " SHAP values are used to explain the decisions of the Isolation Forest model."
+    46    246.1 MiB      0.0 MiB           1       " SHAP values are calculated for each feature in the dataset."
+    47    246.1 MiB      0.0 MiB           1       " They help to understand the contribution of each feature to the anomaly score."
+    48                                         
+    49                                             # Calculate SHAP values to explain the decisions of the Isolation Forest model
+    50    247.8 MiB      1.8 MiB           1       shap_values = h.calculate_shap_values(data_for_analysis, iso_forest_model)
+    51                                         
+    52                                         
+    53    247.8 MiB      0.0 MiB           1       " This visualisation is inspired by the SHAP summary plot from the SHAP library."
+    54    247.8 MiB      0.0 MiB           1       " It shows the mean absolute SHAP values for each feature in the dataset."
+    55    247.8 MiB      0.0 MiB           1       " The mean absolute SHAP value represents the average impact of a feature on the model output."
+    56    247.8 MiB      0.0 MiB           1       " A higher mean absolute SHAP value indicates a higher impact on the anomaly score."
+    57    247.8 MiB      0.0 MiB           1       " The plot helps to identify the most important features for detecting anomalies."
+    58    247.8 MiB      0.0 MiB           1       " The plot is saved as an interactive HTML file for easy sharing and exploration."
+    59                                         
+    60                                             #The Statistical inferenece for the same can be found here.
+    61                                         
+    62    247.8 MiB      0.0 MiB           1       """
+    63                                             "Features with large absolute Shapley values are important. 
+    64                                             Since we want the global importance, we average the absolute Shapley 
+    65                                             values per feature across the data."
+    66                                         
+    67                                             Reference 1: https://christophm.github.io/interpretable-ml-book/shap.html
+    68                                             Reference 2: https://www.youtube.com/watch?v=5p8B2Ikcw-k - PyData Conference, Tel Aviv
+    69                                             Reference 3: https://towardsdatascience.com/explain-your-model-with-the-shap-values-bc36aac4de3d"
+    70                                             Reference 4: https://shap.readthedocs.io/en/latest/ - SHAP Documentation
+    71                                             """
+    72                                             # Visualization of SHAP values using Plotly for interactive visualization
+    73                                         
+    74    247.8 MiB      0.0 MiB           1       shap_summary = shap_values.abs().mean().sort_values(ascending=False)
+    75    267.7 MiB     19.8 MiB           1       fig = px.bar(shap_summary, x=shap_summary.values, y=shap_summary.index, labels={'x': 'Mean Absolute SHAP Value', 'index': 'Features'}, orientation='h')
+    76    267.7 MiB      0.0 MiB           1       fig.update_layout(title_text='Feature Importance based on SHAP Values', title_x=0.5)
+    77    267.9 MiB      0.2 MiB           1       fig.write_html(shap_plot_path)  # Save the plot as an interactive HTML file
+    78                                         
+    79                                             # Save the updated DataFrame with anomaly scores (excluding SHAP values) to a new CSV file
+    80    269.4 MiB      1.5 MiB           1       solar_data.to_csv(output_path, index=False)
+    81    269.4 MiB      0.0 MiB           1       print(f"Results saved to {output_path}")
+    82    269.4 MiB      0.0 MiB           1       print(f"SHAP values plot saved to {shap_plot_path}")

@@ -1,0 +1,58 @@
+   Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    69    212.1 MiB    212.1 MiB           1       @app.callback(
+    70                                                 [Output('time-series-chart', 'figure'),
+    71                                                  Output('correlation-heatmap', 'figure'),
+    72                                                  Output('anomaly-score-chart', 'figure')],
+    73                                                 [Input('instrument-checklist', 'value'),
+    74                                                  Input('date-picker-range', 'start_date'),
+    75                                                  Input('date-picker-range', 'end_date')]
+    76                                             )
+    77                                             @profile  # Decorator to enable memory profiling
+    78                                             def update_graphs(selected_instruments, start_date, end_date):
+    79                                                 """
+    80                                                 Callback function to update graphs based on user input.
+    81                                         
+    82                                                 Args:
+    83                                                 selected_instruments (list): List of selected instruments.
+    84                                                 start_date (str): Start date selected by the user.
+    85                                                 end_date (str): End date selected by the user.
+    86                                         
+    87                                                 Returns:
+    88                                                 figs (list): List of figures for each graph.
+    89                                                 """
+    90    212.1 MiB      0.0 MiB           1           filtered_data = solar_data[(solar_data['Date'] >= start_date) & (solar_data['Date'] <= end_date)]  # Filtering data based on selected date range
+    91                                         
+    92                                                 # Time Series Chart
+    93    212.1 MiB      0.0 MiB           1           time_series_fig = go.Figure()  # Creating a new figure for time series chart
+    94    212.1 MiB      0.0 MiB           6           for instrument in selected_instruments:
+    95    212.1 MiB      0.0 MiB          10               time_series_fig.add_trace(
+    96    212.1 MiB      0.0 MiB          10                   go.Scatter(
+    97    212.1 MiB      0.0 MiB           5                       x=filtered_data['Date'],  # X-axis data
+    98    212.1 MiB      0.0 MiB           5                       y=filtered_data[instrument],  # Y-axis data
+    99    212.1 MiB      0.0 MiB           5                       mode='lines+markers',  # Display mode
+   100    212.1 MiB      0.0 MiB           5                       name=instrument  # Instrument name
+   101                                                         )
+   102                                                     )
+   103    212.1 MiB      0.0 MiB           1           time_series_fig.update_layout(title="Time Series of Selected Instruments")  # Updating layout of time series chart
+   104                                         
+   105                                                 # Correlation Heatmap
+   106    212.1 MiB      0.0 MiB           2           correlation_fig = go.Figure(
+   107    212.1 MiB      0.0 MiB           2               go.Heatmap(
+   108    212.1 MiB      0.0 MiB           1                   z=filtered_data[selected_instruments].corr(),  # Calculating correlation matrix
+   109    212.1 MiB      0.0 MiB           1                   x=selected_instruments,  # X-axis labels
+   110    212.1 MiB      0.0 MiB           1                   y=selected_instruments,  # Y-axis labels
+   111    212.1 MiB      0.0 MiB           1                   colorscale='Viridis'  # Color scale
+   112                                                     )
+   113                                                 )
+   114    212.1 MiB      0.0 MiB           1           correlation_fig.update_layout(title="Correlation Heatmap")  # Updating layout of correlation heatmap
+   115                                         
+   116                                                 # Anomaly Score Chart
+   117    212.1 MiB      0.0 MiB           2           anomaly_score_fig = px.line(
+   118    212.1 MiB      0.0 MiB           1               filtered_data,
+   119    212.1 MiB      0.0 MiB           1               x='Date',  # X-axis data
+   120    212.1 MiB      0.0 MiB           1               y='iso_forest_anomaly_score',  # Y-axis data
+   121    212.1 MiB      0.0 MiB           1               title="Anomaly Scores Over Time"  # Chart title
+   122                                                 )
+   123                                         
+   124    212.1 MiB      0.0 MiB           1           return time_series_fig, correlation_fig, anomaly_score_fig  # Return updated figures

@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+dash 
+plotly.express
+plotly.graph_objects
+dash-tools
