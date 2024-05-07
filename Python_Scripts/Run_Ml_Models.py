@@ -8,7 +8,7 @@ from memory_profiler import profile, memory_usage
 # @profile  "Uncomment this line to do memory profiling of the code"
 " @profile can be used to get the memory usage per line of the code, this has already been performed and stored in the Scalability folder"
 """Reference: https://pypi.org/project/memory-profiler/ 
-    You can further run "mprof run --python Run_Ml_Models.py" and "mprof plot" on terminal to get the memory usage over time of the code
+    You can further run "mprof run --python3 Run_Ml_Models.py" and "mprof plot" on terminal to get the memory usage over time of the code
  These results have been stored in the Scalability folder"""
 
 def main():
