@@ -11,7 +11,7 @@ from memory_profiler import profile  # For memory profiling
 #@profile  # Decorator to enable memory profiling
 """ Uncomment above line with @profile to do memory profiling of the code
  @profile can be used to get the memory usage per line of the code, this has already been performed and stored in the Scalability folder"
-you can further run "mprof run --python Dashboard.py" and "mprof plot" on terminal to get the memory usage with time after run"""
+you can further run "mprof run --python3 Dashboard.py" and "mprof plot" on terminal to get the memory usage with time after run"""
 " These results have been stored in the Scalability folder"
 '''Reference: https://pypi.org/project/memory-profiler/  '''
 
