@@ -3,9 +3,6 @@
 ![Solar Orbiter Instruments]( https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/main/Images/Solar_Orbiter_Instruments.png )
 
 
-Deployed dashboard link: [Dashboard](https://my-render-jh3k.onrender.com/) "Can take upto 30 seconds to load"
- 
-
 This is a project to analyze data from ESA's Solar Orbiter for a period of 2 years, from *1st of January 2022* to *1st of January 2024*.
 
 All the data needed has already been provided in the Data folder as `Solar_Orbiter.csv`.
@@ -43,11 +40,8 @@ To get started, ensure you have Python3 installed on your system. You can downlo
 
 
 **To quickly run everything and see main results, run:**
-- `python3 Python_Scripts/run_ml_models.py`
-- `python3 Python_Scripts/dashboard.py`
-
-
-
+- `python3 Python_Scripts/Run_Ml_Models.py`
+- `python3 Python_Scripts/Dashboard.py`
 
 
 ### Understanding the Data
@@ -69,7 +63,8 @@ Open the Data Folder. It has `Solar_Orbiter.csv`. This file contains, per day, m
 
 1. **Open the Python_Scripts folder.**
 - Here, you will find a file called `Run_Ml_Models.py`.
-- Running this in the terminal will detect all the anomalies within the dataset using the Isolation Forest model.
+- Running this in the terminal from the `Python_Scripts` will detect all the anomalies within the dataset using the Isolation Forest model.
+- The output will be stored as `Solar_Orbiter_With_Anomalies.csv` in the `Data` folder
 
 2. **The Isolation Forest algorithm** is an unsupervised learning algorithm for anomaly detection that works by:
 - Randomly selecting a feature and a split value between the maximum and minimum values of that feature.
@@ -85,10 +80,10 @@ References:
 
 1. **SHAP values** are used to explain the decisions of the Isolation Forest model.
 - SHAP (SHapley Additive exPlanations) values derive from game theory and provide insights into the contribution of each feature to a specific prediction made by the model.
-- These will be calculated upon running the `Run_Ml_Models.py` file.
+- These will be calculated upon running the `Run_Ml_Models.py` file from the `Python_Scripts` directory.
 
 2. **Visualization**: 
-- A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the Explainability folder, based on section 9.6.5 of textbook of Interpretable ML Book
+- A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the `Python_Scripts/Explainability` folder, based on section 9.6.5 of textbook of Interpretable ML Book
 
 References:
 - [Interpretable ML Book - SHAP](https://christophm.github.io/interpretable-ml-book/shap.html) (Section 9.6.5 SHAP Feature Importance, Section 9.6 SHAP)
@@ -97,7 +92,7 @@ References:
 
 3. **Output**:  
 - We will have `Solar_Orbiter_With_Anomalies.csv` within the Data folder saved ( This contains the original database with anomaly scores explained in code)
-- We will have shap_values_plot.html saved in `Python_Scripts/Explainability` , containing the visualisation of Feature importance
+- We will have `Shap_Values_Plot.html` saved in `Python_Scripts/Explainability` , containing the visualisation of Feature importance
 
 ### Dashboarding the Data
 
@@ -113,7 +108,7 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 2. **Deploying using Render** - I have deployed the dashboard on the web using render, largely by following a tutorial
 - Please follow this tutorial for doing the same https://www.youtube.com/watch?v=XWJBJoV5yww&t=0s
 - For the same, you will find the entire Dashboard named as app and all the needed things within src folder in the `Deploy_With_Render` folder 
-- Copy the DeployWithRender directory and open it in a separate project to avoid nested git repositories
+- Copy the Deploy_With_Render directory and open it in a separate project to avoid nested git repositories
 - Ensure you have dash-tools installed, it is their in requirements.txt ( so I am assuming it is installed or do pip install dash-tools)
 - type `dashtools gui` in terminal
 - Go to Deploy section on the newly opened page 
@@ -127,7 +122,7 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - We use the memoryprofiler library to do memory profiling
 - The results are stored in `Scalability/Memory_Profiling`
 - From the results, it can be seen that within the dashboard, every line involves about 120 Mib of memory while callback requires 120 Mib recurrently
-- Also, within the run_ml_models.py calculating shap values and fitting the model are the most memory intensive tasks
+- Also, within the `Run_Ml_Models.py` calculating shap values and fitting the model are the most memory intensive tasks
 - Interestingly, as seen in `Scalability/Plot_ML_Model`, there is a growth and decline in memory usage for Run_Ml_Models but, no decline for Dashboard.
 
 - Reference: https://pypi.org/project/memory-profiler/  
@@ -140,13 +135,16 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - The results are stored in `Scalability/Time_Profiling`
 - To reproduce, simply follow the instructions at the bottom of the code for `Dashboard.py` and `Run_Ml_Models.py`
 - you can interpret the results using snakeviz as mentioned there
-- It shows the time required to load the dashboard completely is 23.22seconds, along with breakdown of time required by different components
-- It shows the time required to run the model and get the shaply values with visualisation is 3.56 seconds with breakdown
+- It shows the time required to load the dashboard completely along with breakdown of time required by different components
+- It shows the time required to run the model and get the shaply values with visualisation with breakdown
 
 - Reference: https://docs.python.org/3/library/profile.html
 
 
-Access the Dashboard at link: 
+**Access the Dashboard at link:**
 
-[Dashboard](https://my-render-jh3k.onrender.com/)
- 
+Deployed dashboard link: [Dashboard](https://my-render-jh3k.onrender.com/) ("The Server is free and hence needs to restart after giving sometime to reload, will buy a paid server for better deployment in next version")
+
+
+**Security and License**
+Please read the License to ethically and safely reproduce the repository
