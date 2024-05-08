@@ -33,7 +33,7 @@ To get started, ensure you have Python3 installed on your system. You can downlo
    - *Change `my_project` with whatever name you want to give it.*
 
 2. **Install all the dependencies of the project** by typing this in your console:
-**pip install -r Setup_File/Requirements.txt**
+`pip install -r Setup_File/Requirements.txt`
 
 
 
@@ -147,4 +147,6 @@ Deployed dashboard link: [Dashboard](https://my-render-jh3k.onrender.com/) ("The
 
 
 **Security and License**
-Please read the License to ethically and safely reproduce the repository
+Please read the License to ethically and safely reproduce the repository.
+Please read Security to report any security issues.
+Please report any Issues in the issues section and I will try to fix it soon.
