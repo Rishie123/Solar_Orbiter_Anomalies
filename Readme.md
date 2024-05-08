@@ -148,5 +148,5 @@ Deployed dashboard link: [Dashboard](https://my-render-jh3k.onrender.com/) ("The
 
 **Security and License**
 Please read the License to ethically and safely reproduce the repository.
-Please read Security to report any security issues.
+Please read Security policy to report any security issues.
 Please report any Issues in the issues section and I will try to fix it soon.
