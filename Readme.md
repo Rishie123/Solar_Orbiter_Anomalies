@@ -81,7 +81,7 @@ References:
 1. **SHAP values** are used to explain the decisions of the Isolation Forest model.
 - SHAP (SHapley Additive exPlanations) values derive from game theory and provide insights into the contribution of each feature to a specific prediction made by the model.
 - The formula for calculating SHAP values is,
-  [SHAP formula]()
+  [SHAP formula](https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/Test_Ideas/Images/Shap_Calculation.png)
 - These will be calculated upon running the `Run_Ml_Models.py` file from the `Python_Scripts` directory.
 
 2. **Visualization**: 
