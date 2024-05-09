@@ -105,7 +105,7 @@ References:
 - Correlation Heatmap: This calculates correlation coefficient between several features and displays it in the form of a heatmap. Interestingly,
 Solar Array Angle is highly correlated to Radial Distance from the sun. This is because, the Solar Arrays change their angle to point in the direction of the sun.
 - Anomaly Score Chart: This is used to find the anomalous dates within the spacecraft. Lower the score, more anomalous the date. Interestingly,
-5 May to 11 May are identified as anomalous dates by the model. This is consistent with the fact that the spacecraft was having high noise period around that time ( https://www.cosmos.esa.int/web/soar/support-data )
+4 May to 11 May are identified as anomalous dates by the model. This is consistent with the fact that the spacecraft was having high noise period around that time ( https://www.cosmos.esa.int/web/soar/support-data )
 - Feature Importance Plot: This is simply embedded from the explainability folder using the Dash HTML component Iframe
 
 2. **Deploying using Render** - I have deployed the dashboard on the web using render, largely by following a tutorial
