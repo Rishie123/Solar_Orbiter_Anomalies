@@ -1,0 +1,9 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+author:
+- family-names: "Jain"
+  given-names: "Rishabh"
+title: "Solar_Orbiter_Anomalies"
+version: 1.0.6
+date-released: 2024-05-09
+url: "https://github.com/Rishie123/Solar_Orbiter_Anomalies"
