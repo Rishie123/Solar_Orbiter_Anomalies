@@ -39,9 +39,9 @@ To get started, ensure you have Python3 installed on your system. You can downlo
 
 
 
-**To quickly run everything and see main results, run:**
-- `python3 Python_Scripts/Run_Ml_Models.py`
-- `python3 Python_Scripts/Dashboard.py`
+**To quickly run everything and see main results, run this in terminal:**
+- `python3 Run_Ml_Models.py` after changing working directory by `cd Python_Scripts`
+- `python3 Dashboard.py` while being in the same `Python_Scripts` directory. ( Confirm it using, `pwd` )
 
 
 ### Understanding the Data
@@ -86,7 +86,7 @@ References:
 
 2. **Visualization**: 
 - A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the `Python_Scripts/Explainability` folder, based on section 9.6.5 of textbook of Interpretable ML Book
-
+- ***It shows that Temperature of the Outboard sensor causes the maximum amount of output change in predicting anomalies***
 References:
 - [Interpretable ML Book - SHAP](https://christophm.github.io/interpretable-ml-book/shap.html) (Section 9.6.5 SHAP Feature Importance, Section 9.6 SHAP)
 - [PyData Conference on SHAP](https://www.youtube.com/watch?v=5p8B2Ikcw-k) - Tel Aviv
