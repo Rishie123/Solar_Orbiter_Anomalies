@@ -6,9 +6,9 @@ These versions are supported for security
 
 | Version   | Supported Versions                        |
 | --------- | ----------------------------------------- |
-| 1.0.4    | Recent Release                             |
-| 1.0.5    | Last  release                              |
-| 1.0.6    | Most recent release                        |
+| 1.0.5    | Recent Release                             |
+| 1.0.6    | Last  release                              |
+| 1.0.7    | Most recent release                        |
 
 ## Reporting a Vulnerability
 
