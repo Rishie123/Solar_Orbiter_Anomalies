@@ -88,7 +88,8 @@ References:
 2. **Visualization**: 
 - A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the `Python_Scripts/Explainability` folder, based on section 9.6.5 of textbook of Interpretable ML Book
 - ***It shows that Temperature of the Outboard sensor causes the maximum amount of output change in predicting anomalies***
-References:
+  
+**References:**
 - [Interpretable ML Book - SHAP](https://christophm.github.io/interpretable-ml-book/shap.html) (Section 9.6.5 SHAP Feature Importance, Section 9.6 SHAP)
 - [PyData Conference on SHAP](https://www.youtube.com/watch?v=5p8B2Ikcw-k) - Tel Aviv
 - [SHAP Documentation](https://shap.readthedocs.io/en/latest/)
@@ -127,6 +128,8 @@ Solar Array Angle is highly correlated to Radial Distance from the sun. This is 
 - From the results, it can be seen that within the dashboard, every line involves about 120 Mib of memory while callback requires 120 Mib recurrently
 - Also, within the `Run_Ml_Models.py` calculating shap values and fitting the model are the most memory intensive tasks
 - Interestingly, as seen in `Scalability/Plot_ML_Model`, there is a growth and decline in memory usage for Run_Ml_Models but, no decline for Dashboard.
+- You can reproduce these results by reading the comements in the 'Dashboard.py' file.
+- You will simply need to uncomment 2 lines to be able to reproduce these results.
 
 - Reference: https://pypi.org/project/memory-profiler/  
 - Reference: https://github.com/pythonprofilers/memory_profiler
