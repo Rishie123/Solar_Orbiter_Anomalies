@@ -70,7 +70,7 @@ Open the Data Folder. It has `Solar_Orbiter.csv`. This file contains, per day, m
 - Randomly selecting a feature and a split value between the maximum and minimum values of that feature.
 - Repeating this process recursively to create a tree-like structure.
 - Anomalies are isolated in the tree with a shorter path length, i.e., fewer splits.
-
+![Isolation Forest Illustration][https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/main/Images/Isolation_Forest.png]
 
 References:
 - [Original Paper](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf)
