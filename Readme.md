@@ -82,7 +82,8 @@ References:
 - SHAP (SHapley Additive exPlanations) values derive from game theory and provide insights into the contribution of each feature to a specific prediction made by the model.
 - The formula for calculating SHAP values is,
   ![SHAP formula](https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/Test_Ideas/Images/Shap_Calculation.png)
-- As can be seen, we find the marginal contribution of each feature, and multiply it by the inverse of prouct of permutation of all possible sets of data and the set of data selected. 
+
+- As can be seen, we find the marginal contribution of each feature, and multiply it by the inverse of prouct of combination of all possible sets of data and the set of data selected. 
 - These will be calculated upon running the `Run_Ml_Models.py` file from the `Python_Scripts` directory.
 - The functions to support calculations of these are put in a separate file, called, `Helpers.py`.
   
