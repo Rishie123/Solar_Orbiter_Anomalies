@@ -84,7 +84,8 @@ References:
   ![SHAP formula](https://github.com/Rishie123/Solar_Orbiter_Anomalies/blob/Test_Ideas/Images/Shap_Calculation.png)
 - As can be seen, we find the marginal contribution of each feature, and multiply it by the inverse of prouct of permutation of all possible sets of data and the set of data selected. 
 - These will be calculated upon running the `Run_Ml_Models.py` file from the `Python_Scripts` directory.
-
+- The functions to support calculations of these are put in a separate file, called, `Helpers.py`.
+  
 2. **Visualization**: 
 - A visualization for the mean absolute value of SHAP values to get feature importance is created and stored in the `Python_Scripts/Explainability` folder, based on section 9.6.5 of textbook of Interpretable ML Book
 - ***It shows that Temperature of the Outboard sensor causes the maximum amount of output change in predicting anomalies***
