@@ -15,9 +15,9 @@ There are two primary tasks which I want to perform:
 
 ### Setup Instructions
 
-To get started, ensure you have Python3 installed on your system. You can download the latest stable version from here: 
+To get started, ensure you have Python3 installed on your system. 
+You can download the recommended stable version 3.11.8(the version this code was written in) from here: 
 [Python Download](https://www.python.org/downloads/)
-
 
 ### Environment Setup
 
@@ -36,7 +36,9 @@ To get started, ensure you have Python3 installed on your system. You can downlo
 `pip install -r Setup_File/Requirements.txt`
 
 
-
+3. **Ensure you have the right python version in your virtual environment**:
+   type, `python -v` in terminal.. If it says, python 3.11.8, Great!
+   If not, type, `pip install python==3.11.8` in terminal
 
 
 **To quickly run everything and see main results, run this in terminal:**
