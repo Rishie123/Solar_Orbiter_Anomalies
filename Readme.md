@@ -36,10 +36,6 @@ You can download the recommended stable version 3.11.8(the version this code was
 `pip install -r Setup_File/Requirements.txt`
 
 
-3. **Ensure you have the right python version in your virtual environment**:
-   type, `python -v` in terminal.. If it says, python 3.11.8, Great!
-   If not, type, `pip install python==3.11.8` in terminal
-
 
 **To quickly run everything and see main results, run this in terminal:**
 - `python3 Run_Ml_Models.py` after changing working directory by `cd Python_Scripts`
