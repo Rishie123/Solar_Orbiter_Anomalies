@@ -7,8 +7,8 @@ These versions are supported for security
 | Version   | Supported Versions                        |
 | --------- | ----------------------------------------- |
 | 1.0.7    | Recent Release                             |
-| 1.0.9    | Last  release                              |
-| 1.1.0    | Most recent release                        |
+| 1.1.0   | Last  release                              |
+| 1.1.1    | Most recent release                        |
 
 ## Reporting a Vulnerability
 
